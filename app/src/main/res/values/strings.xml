@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Makeup App</string>
+    <string name="blush">Blush</string>
+    <string name="bronzer">Bronzer</string>
+    <string name="eyeliner">Eyeliner</string>
+    <string name="eyebrow">Eyebrow</string>
+    <string name="eyeshadow">Eyeshadow</string>
+    <string name="foundation">Foundation</string>
+    <string name="lipliner">Lipliner</string>
+    <string name="lipstick">Lipstick</string>
+    <string name="mascara">Mascara</string>
+    <string name="nail_polish">Nail Polish</string>
+    <string name="almay">Almay</string>
+    <string name="dior">Dior</string>
+    <string name="loreal">Loreal</string>
+    <string name="maybelline">Maybelline</string>
+    <string name="nyx">Nyx</string>
 </resources>
