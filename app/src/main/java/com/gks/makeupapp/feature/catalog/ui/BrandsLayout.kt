@@ -14,7 +14,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun BrandsLayout(
   viewModel: CategoryViewModel,
+  onClick: (id: String, nameRes: Int) -> Unit,
 ) {
+
   LazyVerticalGrid(
     modifier = Modifier.padding(16.dp),
     columns = GridCells.Fixed(2),
@@ -22,7 +24,7 @@ fun BrandsLayout(
     horizontalArrangement = Arrangement.spacedBy(16.dp)
   ) {
     items(viewModel.brands) {
-        brands -> BrandItem(brands.nameRes)
+        brands -> BrandItem(brands.nameRes, onClick = { onClick(brands.id, brands.nameRes) })
     }
   }
 }

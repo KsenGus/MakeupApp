@@ -1,13 +1,12 @@
-package com.gks.makeupapp.feature.catalog.ui
+package com.gks.makeupapp.feature.productslist.ui
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,29 +19,53 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 
 @Composable
-fun BrandItem(
-  @StringRes nameRes: Int,
-  onClick: () -> Unit,
+fun ProductItem(
+  name: String,
+  imageLink: String?,
+  brand: String?,
+  productType: String,
+  rating: Double?,
+  onClick: ()->Unit
 ) {
   Column(
     modifier = Modifier
       .clip(shape = RoundedCornerShape(12.dp))
       .width(150.dp)
-      .height(150.dp)
+      .height(300.dp)
       .border(
         width = 0.5.dp,
         color = Color.Black,
         shape = RoundedCornerShape(12.dp)
       )
+      .padding(12.dp)
       .clickable(onClick = onClick),
     verticalArrangement = Arrangement.Center,
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
-    Text(
-      text = stringResource(nameRes)
+    AsyncImage(
+      model = imageLink,
+      contentDescription = null
     )
+    Spacer(modifier = Modifier.height(10.dp))
+    Text(
+      modifier = Modifier.padding(bottom = 5.dp),
+      text = name,
+      textAlign = TextAlign.Center
+    )
+    Text(
+      modifier = Modifier.padding(bottom = 5.dp),
+      text = brand.orEmpty(),
+      textAlign = TextAlign.Center
+    )
+    if(rating != null) {
+    Text(
+      text = rating.toString()
+    )
+  }
   }
 }

@@ -2,8 +2,10 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
+  alias(libs.plugins.kotlinx.serialization)
   id("com.google.devtools.ksp")
   id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -39,6 +41,9 @@ android {
 }
 
 dependencies {
+  implementation("androidx.room:room-runtime:2.7.2")
+  implementation("androidx.core:core-splashscreen:1.0.0")
+  implementation ("androidx.compose.material:material:1.8.3")
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
@@ -57,9 +62,16 @@ dependencies {
   debugImplementation(libs.androidx.ui.tooling)
   debugImplementation(libs.androidx.ui.test.manifest)
 
+  implementation(libs.retrofit)
+  implementation(libs.okhttp)
+  implementation(libs.logging.interceptor)
+  implementation(libs.retrofit.converter.serialization)
+  implementation(libs.kotlinx.serialization.json)
+
+  // Jetpack Compose integration
   implementation(libs.androidx.navigation.compose)
   implementation(libs.hilt.android)
   implementation(libs.androidx.hilt.navigation.compose)
   ksp(libs.hilt.android.compiler)
-
+  ksp("androidx.room:room-compiler:2.7.2")
 }

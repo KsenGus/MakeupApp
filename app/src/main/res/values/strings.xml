@@ -15,4 +15,5 @@
     <string name="loreal">Loreal</string>
     <string name="maybelline">Maybelline</string>
     <string name="nyx">Nyx</string>
+    <string name="error">Something went wrong</string>
 </resources>

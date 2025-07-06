@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,7 +29,8 @@ import androidx.compose.ui.unit.max
 @Composable
 fun CategoryItem(
   @DrawableRes iconRes: Int,
-  @StringRes nameRes: Int
+  @StringRes nameRes: Int,
+  onClick: () -> Unit,
 ) {
   Column(
     modifier = Modifier
@@ -39,7 +41,8 @@ fun CategoryItem(
         width = 0.5.dp,
         color = Color.Black,
         shape = RoundedCornerShape(12.dp)
-      ),
+      )
+      .clickable(onClick = onClick),
     verticalArrangement = Arrangement.Center,
     horizontalAlignment = Alignment.CenterHorizontally
   ) {

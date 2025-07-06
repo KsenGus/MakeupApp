@@ -2,7 +2,6 @@ package com.gks.makeupapp.feature.catalog.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -12,7 +11,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun CategoriesScreen(
-  viewModel: CategoryViewModel
+  viewModel: CategoryViewModel,
+  onClick: (id: String, nameRes: Int) -> Unit,
 ) {
   LazyVerticalGrid(
     modifier = Modifier.padding(16.dp),
@@ -20,8 +20,12 @@ fun CategoriesScreen(
     verticalArrangement = Arrangement.spacedBy(16.dp),
     horizontalArrangement = Arrangement.spacedBy(16.dp)
   ) {
-    items(viewModel.categories) {
-      category -> CategoryItem(category.iconRes, category.nameRes)
+    items(viewModel.categories) { category ->
+      CategoryItem(
+        category.iconRes,
+        category.nameRes,
+        onClick = { onClick(category.id, category.nameRes) }
+      )
     }
   }
 
