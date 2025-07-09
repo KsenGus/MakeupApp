@@ -1,4 +1,4 @@
-package com.gks.makeupapp.details.data.entity
+package com.gks.makeupapp.feature.details.data.entity
 
 import kotlinx.serialization.Serializable
 

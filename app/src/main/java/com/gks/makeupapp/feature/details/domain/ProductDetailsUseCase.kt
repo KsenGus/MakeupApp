@@ -1,12 +1,15 @@
-package com.gks.makeupapp.details.domain
+package com.gks.makeupapp.feature.details.domain
 
-import com.gks.makeupapp.details.domain.entity.DetailsContentLoadState
+import com.gks.makeupapp.feature.details.domain.entity.DetailsContentLoadState
+import com.gks.makeupapp.feature.details.domain.entity.ProductDetails
 import com.gks.makeupapp.feature.productslist.domain.entity.ContentLoadState
+import com.gks.makeupapp.feature.productslist.domain.entity.Product
 import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 class ProductDetailsUseCase @Inject constructor(
-  private val repository: ProductDetailsRepository) {
+  private val repository: ProductDetailsRepository
+) {
 
   val detailsContentLoadState = MutableStateFlow<DetailsContentLoadState>(DetailsContentLoadState.NotStarted)
 
@@ -21,5 +24,10 @@ class ProductDetailsUseCase @Inject constructor(
     }
   }
 
+  fun toggleLike(product: ProductDetails) {
+    repository.toggleLike(product)
+  }
+
   val productDetails = repository.productDetails
+  val likedProducts = repository.likedProducts
 }

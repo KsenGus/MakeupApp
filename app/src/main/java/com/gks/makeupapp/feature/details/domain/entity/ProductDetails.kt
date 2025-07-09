@@ -1,4 +1,4 @@
-package com.gks.makeupapp.details.domain.entity
+package com.gks.makeupapp.feature.details.domain.entity
 
 import androidx.compose.runtime.Immutable
 

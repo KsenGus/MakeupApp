@@ -1,6 +1,6 @@
 package api
 
-import com.gks.makeupapp.details.data.entity.ProductDetailsResponse
+import com.gks.makeupapp.feature.details.data.entity.ProductDetailsResponse
 import com.gks.makeupapp.feature.productslist.data.entity.DataProduct
 
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.gks.makeupapp.details.domain.entity
+package com.gks.makeupapp.feature.details.domain.entity
 
 sealed class DetailsContentLoadState {
   data object NotStarted : DetailsContentLoadState()

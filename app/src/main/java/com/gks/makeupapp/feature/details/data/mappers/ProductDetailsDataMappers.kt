@@ -1,7 +1,7 @@
-package com.gks.makeupapp.details.data.mappers
+package com.gks.makeupapp.feature.details.data.mappers
 
-import com.gks.makeupapp.details.data.entity.ProductDetailsResponse
-import com.gks.makeupapp.details.domain.entity.ProductDetails
+import com.gks.makeupapp.feature.details.data.entity.ProductDetailsResponse
+import com.gks.makeupapp.feature.details.domain.entity.ProductDetails
 
 internal fun ProductDetailsResponse.toDomainModel() : ProductDetails {
   return ProductDetails(

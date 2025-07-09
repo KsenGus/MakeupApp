@@ -49,6 +49,7 @@ fun ProductsListScreen(
   val products by viewModel.products.collectAsState(emptyList())
   val catalog = remember(catalogSerialized) { catalogSerialized.deserialize() }
   val contentLoadState by viewModel.contentLoadState.collectAsState(ContentLoadState.NotStarted)
+  val likedProducts by viewModel.likedProducts.collectAsState(emptyList())
 
   LaunchedEffect(catalogSerialized) {
     when (catalog) {
@@ -111,7 +112,9 @@ fun ProductsListScreen(
               product.brand,
               product.productType,
               product.rating,
-              onClick = { onProductClick(product.id) }
+              onClick = { onProductClick(product.id) },
+              onLikeClick = { viewModel.toggleLike(product) },
+              isLiked = likedProducts.any{ likedProduct -> likedProduct.id == product.id}
             )
           }
         }

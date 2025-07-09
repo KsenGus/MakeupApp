@@ -1,7 +1,7 @@
-package com.gks.makeupapp.details.data.di
+package com.gks.makeupapp.feature.details.data.di
 
-import com.gks.makeupapp.details.data.ProductDetailsDataRepository
-import com.gks.makeupapp.details.domain.ProductDetailsRepository
+import com.gks.makeupapp.feature.details.data.ProductDetailsDataRepository
+import com.gks.makeupapp.feature.details.domain.ProductDetailsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

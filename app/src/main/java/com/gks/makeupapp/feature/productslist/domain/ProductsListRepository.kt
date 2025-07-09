@@ -9,4 +9,6 @@ interface ProductsListRepository {
   val products: Flow<List<Product?>>
   suspend fun fetchProductsByBrand(id: String)
 
+  fun toggleLike(product: Product)
+  val likedProducts: Flow<List<Product>>
 }
